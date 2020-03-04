@@ -1,4 +1,4 @@
-function [xr] = bisec(f, xl, xu, numIt, display)
+function [xr] = falsi(f, xl, xu, numIt, display)
     if f(xl) * f(xu) > 0
         disp 'El rango proporcionado no es válido!'
         return
@@ -11,10 +11,10 @@ function [xr] = bisec(f, xl, xu, numIt, display)
     dataRow = [];
     for i = 0:numIt
         xro = xr;
-        xr = (xl + xu) / 2;
         fxl = f(xl);
-        fxr = f(xr);
         fxu = f(xu);
+        xr = xu-(((fxu)*(xl-xu))/(fxl-fxu));
+        fxr = f(xr);
         fx = fxl * fxr;
         ea = (xr-xro) / xr;
         dataRow = [i, xl, xu, xr, fxl, fxr,fxu, fx, abs(ea*100)];
