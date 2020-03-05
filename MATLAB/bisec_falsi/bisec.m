@@ -19,6 +19,14 @@ function [xr] = bisec(f, xl, xu, numIt, display)
         ea = (xr-xro) / xr;
         dataRow = [i, xl, xu, xr, fxl, fxr,fxu, fx, abs(ea*100)];
         Data = [Data;dataRow];
+        p1 = ['xr = (', num2str(xl), ' + ', num2str(xu), ')/', num2str(2), ' = ', num2str(xr)];
+        p2 = ['ea = (', num2str(xr), ' - ', num2str(xro), ')/', num2str(xr), ' = ', num2str(abs(ea)*100)];
+        p3 = ['fx = ', num2str(fxl), ' x ', num2str(fxr), ' = ', num2str(fx)];
+        disp(['i = ', num2str(i)]);
+        disp(p1);
+        disp(p2);
+        disp(p3);
+        disp('---------------------------------------');
         if fx < 0
            xu = xr;
         elseif fx > 0
