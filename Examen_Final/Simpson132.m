@@ -1,7 +1,7 @@
 %n = # de puntos
 %h = altura de segmentos
 %val = arreglo de valores
-function [area] = Simpson13(n, h, val)
+function [area] = Simpson132(n, h, val)
     area = val(1) + val(n);
     
     for i = 2:n - 1

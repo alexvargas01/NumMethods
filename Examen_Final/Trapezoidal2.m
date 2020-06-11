@@ -1,5 +1,5 @@
 %n = # de puntos
-%h = altura de segmentos
+        
 %val = arreglo de valores
 function [area] = Trapezoidal2(n, h, val)
     
